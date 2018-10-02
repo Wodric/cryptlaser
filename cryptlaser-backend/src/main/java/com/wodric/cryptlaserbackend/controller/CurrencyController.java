@@ -24,7 +24,7 @@ public class CurrencyController {
 	 */
 
 	@PostMapping("/currencies")
-	public Currency createAppUser(@RequestBody Currency currency) {
+	public Currency createAppUser(@RequestBody CurrencyDto currency) {
 		return currencyService.createCurrency(currency);
 	}
 
@@ -34,7 +34,7 @@ public class CurrencyController {
 	}
 
 	@PutMapping("/currencies/{id}")
-	public Currency updateAppUser(@RequestBody Currency currency, @PathVariable Long id) {
+	public Currency updateAppUser(@RequestBody CurrencyDto currency, @PathVariable Long id) {
 		return currencyService.updateCurrency(currency, id);
 	}
 

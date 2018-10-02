@@ -1,6 +1,7 @@
 package com.wodric.cryptlaserbackend.service;
 
 import com.wodric.cryptlaserbackend.domain.Currency;
+import com.wodric.cryptlaserbackend.domain.dto.CurrencyDto;
 
 import java.util.Collection;
 
@@ -10,11 +11,11 @@ public interface CurrencyService {
 
 	long countCurrencies();
 
-	Currency createCurrency(Currency currencyDto);
+	Currency createCurrency(CurrencyDto currencyDto);
 
 	Currency retrieveCurrency(Long id);
 
-	Currency updateCurrency(Currency currencyDto, Long id);
+	Currency updateCurrency(CurrencyDto currencyDto, Long id);
 
 	void deleteCurrency(Long id);
 }
