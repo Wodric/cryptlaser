@@ -15,7 +15,14 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": ""
+							"raw": "{{url}}/api/currencies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"currencies"
+							]
 						}
 					},
 					"response": []
@@ -27,7 +34,15 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": ""
+							"raw": "{{url}}/api/currencies/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"currencies",
+								"1"
+							]
 						}
 					},
 					"response": []
@@ -35,11 +50,26 @@
 				{
 					"name": "add a new one",
 					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"shortName\": \"LTC\",\n\t\"name\": \"Litecoin\",\n\t\"type\": \"CRYPTO\"\n}"
+						},
 						"url": {
-							"raw": ""
+							"raw": "{{url}}/api/currencies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"currencies"
+							]
 						}
 					},
 					"response": []
@@ -74,11 +104,19 @@
 				{
 					"name": "delete one",
 					"request": {
-						"method": "GET",
+						"method": "DELETE",
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": ""
+							"raw": "{{url}}/api/currencies/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"currencies",
+								"4"
+							]
 						}
 					},
 					"response": []
@@ -110,7 +148,7 @@
 	],
 	"variable": [
 		{
-			"id": "831f54a8-24c7-43e2-b511-80bef994e462",
+			"id": "06e78754-35e9-4145-9f64-57e2e62aefbb",
 			"key": "url",
 			"value": "http://localhost:8080",
 			"type": "string"

@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 @RestController
+@RequestMapping(path = "/api/currencies")
 public class CurrencyController {
 
 	@Autowired
 	private CurrencyService currencyService;
 
 
-	@GetMapping("/currencies")
+	@GetMapping("")
 	public Collection<Currency> getAllCurrencies(){
 		return 	currencyService.findAllCurrencies();
 	}
@@ -24,22 +25,22 @@ public class CurrencyController {
 	 * CRUD
 	 */
 
-	@PostMapping("/currencies")
+	@PostMapping("")
 	public Currency createCurrency(@RequestBody CurrencyDto currency) {
 		return currencyService.createCurrency(currency);
 	}
 
-	@GetMapping("/currencies/{id}")
+	@GetMapping("/{id}")
 	public Currency retrieveCurrency(@PathVariable Long id) {
 		return currencyService.retrieveCurrency(id);
 	}
 
-	@PutMapping("/currencies/{id}")
+	@PutMapping("/{id}")
 	public Currency updateCurrency(@RequestBody CurrencyDto currency, @PathVariable Long id) {
 		return currencyService.updateCurrency(currency, id);
 	}
 
-	@DeleteMapping("/currencies/{id}")
+	@DeleteMapping("/{id}")
 	public void deleteCurrency(@PathVariable long id) {
 		currencyService.deleteCurrency(id);
 	}
