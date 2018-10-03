@@ -1,14 +1,15 @@
 package com.wodric.cryptlaserbackend.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
-import java.util.Objects;
+import java.util.List;
 
 @Entity
 @Data
@@ -20,11 +21,11 @@ public class Currency {
     private long id;
 
     @NotNull
-    @Size(min=3, max=3)
+    @Size(min=1, max=4)
     private String shortName;
 
     @NotNull
-    @Size(min = 3, max = 30)
+    @Size(min = 1, max = 30)
     private String name;
 
     @Min(value = 0)
@@ -32,4 +33,9 @@ public class Currency {
 
     @Enumerated(EnumType.STRING)
     private CurrencyType type;
+
+    private String website;
+
+	@OneToMany
+    private List<CurrencyMarketPrice> lastValueList;
 }

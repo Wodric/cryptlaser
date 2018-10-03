@@ -1,5 +1,6 @@
 package com.wodric.cryptlaserbackend.controller;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.wodric.cryptlaserbackend.domain.Currency;
 import com.wodric.cryptlaserbackend.domain.dto.CurrencyDto;
 import com.wodric.cryptlaserbackend.service.CurrencyService;
