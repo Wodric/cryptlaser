@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTableModule, MatPaginatorModule, MatSortModule,
-   MatProgressSpinnerModule, MatIconModule, MatDialogModule} from '@angular/material';
+   MatProgressSpinnerModule, MatIconModule, MatDialogModule,
+   MatFormFieldModule, MatInputModule, MatSelectModule,
+   MatOptionModule} from '@angular/material';
 
 import { GlobalDashboardComponent } from './components/global-dashboard/global-dashboard.component';
 import { NewCurrencyFormComponent } from './components/new-currency-form/new-currency-form.component';
@@ -20,7 +22,11 @@ import { FormsModule } from '@angular/forms';
     MatSortModule,
     MatProgressSpinnerModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatOptionModule
   ],
   declarations: [
     GlobalDashboardComponent,

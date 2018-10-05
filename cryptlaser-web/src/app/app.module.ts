@@ -5,12 +5,12 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule,
-  MatIconModule, MatListModule, MatProgressSpinnerModule } from '@angular/material';
+  MatIconModule, MatListModule, MatProgressSpinnerModule,
+  MatFormFieldModule, MatInputModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { GlobalDashboardModule } from './global-dashboard/global-dashboard.module';
 import { GlobalNavigationComponent } from './global-navigation/global-navigation.component';
-import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,7 +22,6 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     CommonModule,
-    FormsModule,
     // custom
     GlobalDashboardModule,
     BrowserAnimationsModule,
@@ -33,7 +32,9 @@ import { FormsModule } from '@angular/forms';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

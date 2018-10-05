@@ -33,8 +33,6 @@ export class GlobalCurrencyTableComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    // only run when property "currencyList" changed
-    console.log(this.currencyList);
     if (changes.currencyList.currentValue) {
       this.dataSource = new GlobalCurrencyTableDataSource(this.paginator, this.sort, this.currencyList);
     }
