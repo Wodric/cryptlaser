@@ -18,7 +18,7 @@ public class CurrencyController {
 	private CurrencyService currencyService;
 
 
-	@GetMapping("")
+	@GetMapping()
 	public Collection<Currency> getAllCurrencies(){
 		return 	currencyService.findAllCurrencies();
 	}
@@ -27,7 +27,7 @@ public class CurrencyController {
 	 * CRUD
 	 */
 
-	@PostMapping("")
+	@PostMapping()
 	public Currency createCurrency(@RequestBody CurrencyDto currency) {
 		return currencyService.createCurrency(currency);
 	}

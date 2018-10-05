@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 
 import { Currency } from './models/currency.interface';
 import { AppConstants } from '../app-constants';
 
 const CURRENCY_API_URL_PATH = AppConstants.getApiBaseURL + '/currencies';
+const HTTP_OPTIONS = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    'Charset': 'UTF-8'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -25,13 +31,18 @@ export class CurrencyService {
           .get<Currency>(`${CURRENCY_API_URL_PATH}/${id}`);
   }
 
-  updatePassengers(currency: Currency): Observable<Currency> {
+  updateCurrency(currency: Currency): Observable<Currency> {
     return this.httpClient
         .put<Currency>(`${CURRENCY_API_URL_PATH}/${currency.id}`, currency);
 }
 
-  removePassengers(currency: Currency): Observable<Currency> {
+  removeCurrency(currency: Currency): Observable<Currency> {
     return this.httpClient
         .delete<Currency>(`${CURRENCY_API_URL_PATH}/${currency.id}`);
+  }
+
+  createCurrency(currency: Currency): Observable<Currency> {
+    return this.httpClient
+        .post<Currency>(CURRENCY_API_URL_PATH, currency, HTTP_OPTIONS);
   }
 }

@@ -1,9 +1,12 @@
-<p>
-  global-dashboard works!
-</p>
+<!-- goals is to transform it in table to present X value per pages-->
+
 <ul>
-  <li *ngFor="let currency of currencies">
-    {{ currency.shortName }} : {{ currency.name }}
-  </li>
+  <app-global-currency-table [currencyList]="currencies"></app-global-currency-table>
+
+  <div class="button-row">
+    <button mat-stroked-button color="primary" (click)="OnClickAddCurrency()">Add Currency</button>
+    <button mat-stroked-button color="primary" (click)="OnClickAddCurrencyValue()">Add Currency Value</button>
+  </div>
+
 </ul>
 

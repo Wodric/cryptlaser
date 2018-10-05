@@ -1,0 +1,33 @@
+<h2 mat-dialog-title>Add new value to currecy</h2>
+<form mat-dialog-content class="form">
+  <div class="form-group">
+      <label>Currency</label>
+      <select id="type">
+        <option *ngFor="let currency of currencies" [value]="currency.id">{{ currency.name }}</option>
+      </select>
+  </div>
+  <div class="form-group">
+      <label>Reference Currency</label>
+      <select id="type">
+        <option *ngFor="let currency of currencies" [value]="currency.id">{{ currency.name }}</option>
+      </select>
+  </div>
+  <div class="form-group">
+      <label>Value</label>
+      <input type="number" name="value" min="0">
+  </div>
+  <div class="form-group">
+    <div class="form-subgroup">
+      <label>Current value : </label>
+      <input type="checkbox" name="now" value="now" checked>
+    </div>
+    <div class="form-subgroup">
+      <label>Specify another value date</label>
+      <input type="datetime-local" name="valueDate">
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button type="submit" class="btn btn-success" (click)="onSubmit()" [mat-dialog-close]="true" cdkFocusInitial>Submit</button>
+    <button mat-button mat-dialog-close>Cancel</button>
+  </div>
+</form>
