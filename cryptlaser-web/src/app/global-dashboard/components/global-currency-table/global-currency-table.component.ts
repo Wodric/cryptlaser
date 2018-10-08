@@ -36,5 +36,5 @@ export class GlobalCurrencyTableComponent implements OnInit, OnChanges {
     if (changes.currencyList.currentValue) {
       this.dataSource = new GlobalCurrencyTableDataSource(this.paginator, this.sort, this.currencyList);
     }
-}
+  }
 }

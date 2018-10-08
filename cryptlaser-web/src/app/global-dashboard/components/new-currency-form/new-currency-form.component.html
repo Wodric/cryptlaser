@@ -29,7 +29,8 @@
       <mat-select 
         placeholder="Currency type" 
         [(ngModel)]="currency.type"
-        name="type">
+        name="type"
+        required>
         <mat-option *ngFor="let type of currencyType" [value]="type">
           {{ type }}
         </mat-option>

@@ -29,7 +29,10 @@ export class GlobalDashboardComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result: Currency) => {
-      this.currencies = this.currencies.concat(result);
+      // check if user just close the creation windows without validation
+      if (result !== undefined && result.name !== undefined) {
+        this.currencies = this.currencies.concat(result);
+      }
     });
   }
 
