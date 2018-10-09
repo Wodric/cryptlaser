@@ -37,15 +37,12 @@ export class GlobalDashboardComponent implements OnInit {
   }
 
   OnClickAddCurrencyValue() {
-    console.log('clicked');
     const dialogRef = this.dialog.open(NewCurrencyValueFormComponent, {
       width: '425px',
       height: '450px',
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      console.log(result);
     });
   }
 }
