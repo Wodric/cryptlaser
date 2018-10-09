@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { MatTableModule, MatPaginatorModule, MatSortModule,
    MatProgressSpinnerModule, MatIconModule, MatDialogModule,
    MatFormFieldModule, MatInputModule, MatSelectModule,
@@ -11,8 +12,7 @@ import { NewCurrencyValueFormComponent } from './components/new-currency-value-f
 import { GlobalCurrencyTableComponent } from './components/global-currency-table/global-currency-table.component';
 
 import { CurrencyService } from './currency.service';
-import { FormsModule } from '@angular/forms';
-
+import { CurrencyShortNameDirective } from '../directives/currency-short-name.directive';
 @NgModule({
   imports: [
     CommonModule,
@@ -32,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     GlobalDashboardComponent,
     NewCurrencyFormComponent,
     NewCurrencyValueFormComponent,
-    GlobalCurrencyTableComponent
+    GlobalCurrencyTableComponent,
+    CurrencyShortNameDirective
   ],
   providers: [
     CurrencyService

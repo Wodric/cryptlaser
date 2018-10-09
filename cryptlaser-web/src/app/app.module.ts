@@ -34,7 +34,7 @@ import { GlobalNavigationComponent } from './global-navigation/global-navigation
     MatListModule,
     MatProgressSpinnerModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

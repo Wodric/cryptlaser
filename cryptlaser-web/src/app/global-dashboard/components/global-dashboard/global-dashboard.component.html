@@ -1,12 +1,14 @@
 <!-- goals is to transform it in table to present X value per pages-->
 
 <ul>
-  <app-global-currency-table [currencyList]="currencies"></app-global-currency-table>
+  <app-global-currency-table [currencyList]="currencies"><h2>Currency List</h2></app-global-currency-table>
 
   <div class="button-row">
     <button mat-stroked-button color="primary" (click)="OnClickAddCurrency()">Add Currency</button>
     <button mat-stroked-button color="primary" (click)="OnClickAddCurrencyValue()">Add Currency Value</button>
   </div>
+
+  <app-global-currency-table [currencyList]="currencies"><h2>Waiting for validation currencies</h2></app-global-currency-table>
 
 </ul>
 
