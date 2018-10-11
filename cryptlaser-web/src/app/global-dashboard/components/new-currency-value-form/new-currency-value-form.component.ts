@@ -17,4 +17,8 @@ export class NewCurrencyValueFormComponent implements OnInit {
         .getAllCurrencies().subscribe(data => this.currencies = data);
   }
 
+  onSubmit() {
+
+  }
+
 }

@@ -12,7 +12,6 @@ import { AppComponent } from './app.component';
 import { GlobalDashboardModule } from './global-dashboard/global-dashboard.module';
 import { GlobalNavigationComponent } from './global-navigation/global-navigation.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

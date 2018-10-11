@@ -1,0 +1,7 @@
+:host table{
+    width: 75%;
+}
+
+:host mat-paginator{
+    width: 75%;
+}
