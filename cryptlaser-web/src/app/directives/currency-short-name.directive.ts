@@ -1,4 +1,4 @@
-import { Directive, HostListener, ElementRef } from '@angular/core';
+import { Directive, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appCurrencyShortName]'
@@ -11,5 +11,5 @@ export class CurrencyShortNameDirective {
   }
 
   constructor () {
-   }
+  }
 }

@@ -1,45 +1,41 @@
 
 <h2 mat-dialog-title>Add a currency</h2>
-<form mat-dialog-content (ngSubmit)="onSubmit(form.valid,currency)" #form="ngForm" class="form">
+<form 
+  mat-dialog-content
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()">
   <mat-form-field class="full-width">
     <input matInput 
       placeholder="Name" 
-      [(ngModel)]="currency.name"
-      name="name"
-      minlength="3"
-      maxlength="50"
-      required>
+      formControlName="name">
+      <mat-error *ngIf="form.get('name').hasError('required')">Mandatory field</mat-error>
+      <mat-error *ngIf="form.get('name').hasError('minlength')">Min 3 characters</mat-error>
+      <mat-error *ngIf="form.get('name').hasError('maxlength')">Max 50 characters</mat-error>
   </mat-form-field>
   <mat-form-field class="full-width" hintLabel="Max 4 characters">
     <input matInput 
       appCurrencyShortName
       placeholder="Short Name"
-      type="text" 
-      [(ngModel)]="currency.shortName"
-      name="shortName"
-      minlength="1"
-      maxlength="4"
-      required>
+      formControlName="shortName">
+      <mat-error *ngIf="form.get('shortName').hasError('required')">Mandatory field</mat-error>
+      <mat-error *ngIf="form.get('shortName').hasError('maxlength')">Max 4 characters</mat-error>
   </mat-form-field>
   <mat-form-field class="full-width">
     <mat-select 
-      placeholder="Currency type" 
-      [(ngModel)]="currency.type"
-      name="type"
-      required>
+      placeholder="Currency type"
+      formControlName="type">
+      <mat-option>--</mat-option>
       <mat-option *ngFor="let type of currencyType" [value]="type">
         {{ type }}
       </mat-option>
     </mat-select>
+    <mat-error *ngIf="form.get('type').hasError('required')">Choose a currency type</mat-error>
   </mat-form-field>
   <mat-form-field class="full-width" >
     <input matInput 
       placeholder="Website URL" 
-      pattern="https?://.+" 
-      [(ngModel)]="currency.website" 
-      name="website"
-      minlength="8"
-      maxlength="50">
+      pattern="https?://.+"
+      formControlName="website">
   </mat-form-field>
   <div mat-dialog-actions>
     <button 

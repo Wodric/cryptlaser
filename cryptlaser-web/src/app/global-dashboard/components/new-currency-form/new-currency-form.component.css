@@ -15,5 +15,5 @@
     display: flex;
     justify-content: space-around;  
     min-width: 80%;
-    align-self: center
+    align-self: center;
 }

@@ -1,5 +1,6 @@
 <h2 mat-dialog-title>Add new value to currecy</h2>
-<form mat-dialog-content class="form">
+<form mat-dialog-content 
+  [formGroup]="form">
   <div class="form-group">
       <label>Currency</label>
       <select id="type">
