@@ -51,8 +51,6 @@ export class NewCurrencyValueFormComponent implements OnInit {
     } else {
       this.form.get('date').enable();
     }
-
-    console.log(event);
   }
 
 }

@@ -7,17 +7,26 @@ import { MatTableModule, MatPaginatorModule, MatSortModule,
    MatOptionModule, MatCheckboxModule, MatDatepickerModule,
    MatNativeDateModule } from '@angular/material';
 
-import { GlobalDashboardComponent } from './components/global-dashboard/global-dashboard.component';
+import { GlobalDashboardComponent } from './global-dashboard.component';
 import { NewCurrencyFormComponent } from './components/new-currency-form/new-currency-form.component';
 import { NewCurrencyValueFormComponent } from './components/new-currency-value-form/new-currency-value-form.component';
 import { GlobalCurrencyTableComponent } from './components/global-currency-table/global-currency-table.component';
 
 import { CurrencyService } from './currency.service';
 import { CurrencyShortNameDirective } from '../directives/currency-short-name.directive';
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [
+  { path: '', component: GlobalDashboardComponent }
+];
+
+
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    RouterModule.forChild(routes),
+    // material
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
@@ -43,7 +52,8 @@ import { CurrencyShortNameDirective } from '../directives/currency-short-name.di
     CurrencyService
   ],
   exports: [
-    GlobalDashboardComponent
+    GlobalDashboardComponent,
+    RouterModule
   ],
   entryComponents: [
     NewCurrencyFormComponent,

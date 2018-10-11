@@ -4,13 +4,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule,
-  MatIconModule, MatListModule, MatProgressSpinnerModule,
-  MatFormFieldModule, MatInputModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { GlobalDashboardModule } from './global-dashboard/global-dashboard.module';
+import { PersonalDashboardModule } from './personal-dashboard/personal-dashboard.module';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 import { GlobalNavigationComponent } from './global-navigation/global-navigation.component';
+import { MatListModule, MatSidenavModule, MatToolbarModule, MatIconModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -21,19 +22,18 @@ import { GlobalNavigationComponent } from './global-navigation/global-navigation
     BrowserModule,
     HttpClientModule,
     CommonModule,
+    RouterModule,
+    LayoutModule,
     // custom
     GlobalDashboardModule,
+    PersonalDashboardModule,
     BrowserAnimationsModule,
-    LayoutModule,
-    // materials
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
+    AppRoutingModule,
+    // material module
     MatListModule,
-    MatProgressSpinnerModule,
-    MatFormFieldModule,
-    MatInputModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

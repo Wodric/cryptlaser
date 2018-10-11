@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Currency } from '../../models/currency.interface';
-import { CurrencyService } from '../../currency.service';
+import { Currency } from './models/currency.interface';
+import { CurrencyService } from './currency.service';
 import { MatDialog } from '@angular/material';
-import { NewCurrencyFormComponent } from '../new-currency-form/new-currency-form.component';
-import { NewCurrencyValueFormComponent } from '../new-currency-value-form/new-currency-value-form.component';
+import { NewCurrencyFormComponent } from './components/new-currency-form/new-currency-form.component';
+import { NewCurrencyValueFormComponent } from './components/new-currency-value-form/new-currency-value-form.component';
 
 
 @Component({
