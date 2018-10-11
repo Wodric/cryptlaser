@@ -4,7 +4,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule, MatPaginatorModule, MatSortModule,
    MatProgressSpinnerModule, MatIconModule, MatDialogModule,
    MatFormFieldModule, MatInputModule, MatSelectModule,
-   MatOptionModule} from '@angular/material';
+   MatOptionModule, MatCheckboxModule, MatDatepickerModule,
+   MatNativeDateModule } from '@angular/material';
 
 import { GlobalDashboardComponent } from './components/global-dashboard/global-dashboard.component';
 import { NewCurrencyFormComponent } from './components/new-currency-form/new-currency-form.component';
@@ -26,7 +27,10 @@ import { CurrencyShortNameDirective } from '../directives/currency-short-name.di
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatOptionModule
+    MatOptionModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   declarations: [
     GlobalDashboardComponent,

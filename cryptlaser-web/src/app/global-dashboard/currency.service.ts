@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 import { Currency } from './models/currency.interface';
 import { AppConstants } from '../app-constants';
+import { CurrencyMarketPrice } from './models/currency-market-price.interface';
 
 const CURRENCY_API_URL_PATH = AppConstants.getApiBaseURL + '/currencies';
 const HTTP_OPTIONS = {
@@ -44,5 +45,10 @@ export class CurrencyService {
   createCurrency(currency: Currency): Observable<Currency> {
     return this.httpClient
         .post<Currency>(CURRENCY_API_URL_PATH, currency, HTTP_OPTIONS);
+  }
+
+  createCurrencyMarketPrice(currencyMarketPrice: CurrencyMarketPrice): Observable<CurrencyMarketPrice> {
+    console.log(currencyMarketPrice);
+    return of(currencyMarketPrice);
   }
 }

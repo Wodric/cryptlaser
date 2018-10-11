@@ -1,34 +1,55 @@
 <h2 mat-dialog-title>Add new value to currecy</h2>
-<form mat-dialog-content 
-  [formGroup]="form">
-  <div class="form-group">
-      <label>Currency</label>
-      <select id="type">
-        <option *ngFor="let currency of currencies" [value]="currency.id">{{ currency.name }}</option>
-      </select>
-  </div>
-  <div class="form-group">
-      <label>Reference Currency</label>
-      <select id="type">
-        <option *ngFor="let currency of currencies" [value]="currency.id">{{ currency.name }}</option>
-      </select>
-  </div>
-  <div class="form-group">
-      <label>Value</label>
-      <input type="number" name="value" min="0">
-  </div>
-  <div class="form-group">
-    <div class="form-subgroup">
-      <label>Current value : </label>
-      <input type="checkbox" name="now" value="now" checked>
-    </div>
-    <div class="form-subgroup">
-      <label>Specify another value date</label>
-      <input type="datetime-local" name="valueDate">
-    </div>
-  </div>
+<form 
+  mat-dialog-content 
+  *ngIf="form"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-select 
+      placeholder="Currency"
+      formControlName="currency">
+      <mat-option>--</mat-option>
+      <mat-option *ngFor="let cur of currencies" [value]="cur.id">
+        {{ cur.shortName }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+      <input matInput
+        type="number" 
+        placeholder="Value"
+        formControlName="rate">
+  </mat-form-field>
+  <mat-form-field>
+      <mat-select 
+        placeholder="Value Currency"
+        formControlName="refCurrency">
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let ccy of refCurrencies" [value]="ccy.id">
+          {{ ccy.shortName }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  <mat-checkbox
+      formControlName="isNow" 
+      (change)="onChange($event)">
+      Is the current value
+  </mat-checkbox>
+  <mat-form-field>
+    <input matInput
+     [matDatepicker]="picker" 
+     placeholder="Specify another value date"
+     formControlName="date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
   <div mat-dialog-actions>
-    <button type="submit" class="btn btn-success" (click)="onSubmit()" [mat-dialog-close]="true" cdkFocusInitial>Submit</button>
-    <button mat-button mat-dialog-close>Cancel</button>
-  </div>
+      <button 
+        mat-button class="btn btn-success"
+        [disabled]="form.invalid" 
+        cdkFocusInitial>
+         Submit
+      </button>
+      <button mat-button mat-dialog-close>Cancel</button>
+    </div>
 </form>

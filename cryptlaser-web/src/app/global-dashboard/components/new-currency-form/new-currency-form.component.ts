@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { AppConstants } from '../../../app-constants';
 import { Currency } from '../../models/currency.interface';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
