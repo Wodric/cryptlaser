@@ -19,11 +19,11 @@ public class Currency {
     private long id;
 
     @NotNull
-    @Size(min=1, max=4)
+    @Size(min = 1, max = 10)
     private String shortName;
 
     @NotNull
-    @Size(min = 1, max = 30)
+    @Size(min = 1, max = 100)
     private String name;
 
     @Min(value = 0)

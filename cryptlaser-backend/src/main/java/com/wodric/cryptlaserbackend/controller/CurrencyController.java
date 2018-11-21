@@ -3,6 +3,7 @@ package com.wodric.cryptlaserbackend.controller;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.wodric.cryptlaserbackend.domain.Currency;
 import com.wodric.cryptlaserbackend.domain.dto.CurrencyDto;
+import com.wodric.cryptlaserbackend.service.CurrencyApiService;
 import com.wodric.cryptlaserbackend.service.CurrencyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,9 @@ public class CurrencyController {
 
 	@Autowired
 	private CurrencyService currencyService;
+
+	@Autowired
+	private CurrencyApiService currencyApiService;
 
 
 	@GetMapping()
