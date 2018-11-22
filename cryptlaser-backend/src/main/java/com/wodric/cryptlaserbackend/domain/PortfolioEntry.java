@@ -26,4 +26,7 @@ public class PortfolioEntry {
 	@NotNull
 	@OneToOne
 	private  Portfolio portfolio;
+
+	@Version
+	private Long version;
 }

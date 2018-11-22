@@ -37,4 +37,7 @@ public class Currency {
 
 	@OneToMany
     private List<CurrencyValue> lastValueList;
+
+    @Version
+    private Long version;
 }
