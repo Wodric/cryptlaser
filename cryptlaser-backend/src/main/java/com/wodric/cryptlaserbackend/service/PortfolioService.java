@@ -1,16 +1,15 @@
 package com.wodric.cryptlaserbackend.service;
 
 import com.wodric.cryptlaserbackend.domain.Portfolio;
-import com.wodric.cryptlaserbackend.domain.User;
 import com.wodric.cryptlaserbackend.domain.dto.PortfolioDto;
-import com.wodric.cryptlaserbackend.domain.dto.UserDto;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
+import java.util.List;
 
 @Service
 public interface PortfolioService {
-	Collection<Portfolio> findAllPortfolioForUser(User user);
+
+	List<Portfolio> findAllPortfoliosForUser(long userId);
 
 	Portfolio createPortfolio(PortfolioDto portfolioDto);
 

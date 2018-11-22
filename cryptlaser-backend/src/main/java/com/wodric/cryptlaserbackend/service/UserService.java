@@ -13,7 +13,7 @@ public interface UserService {
 
 	User createUser(UserDto userDto);
 
-	User retrieveUSer(Long id);
+	User retrieveUser(Long id);
 
 	User updateUser(UserDto userDto, Long id);
 

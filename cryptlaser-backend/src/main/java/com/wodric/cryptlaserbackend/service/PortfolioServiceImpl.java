@@ -1,17 +1,14 @@
 package com.wodric.cryptlaserbackend.service;
 
-import com.wodric.cryptlaserbackend.domain.Currency;
 import com.wodric.cryptlaserbackend.domain.Portfolio;
-import com.wodric.cryptlaserbackend.domain.PortfolioEntry;
 import com.wodric.cryptlaserbackend.domain.User;
 import com.wodric.cryptlaserbackend.domain.dto.PortfolioDto;
 import com.wodric.cryptlaserbackend.exception.EntityNotFoundException;
 import com.wodric.cryptlaserbackend.repository.PortfolioRepository;
-import com.wodric.cryptlaserbackend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -21,8 +18,8 @@ public class PortfolioServiceImpl implements PortfolioService {
 	private PortfolioRepository repository;
 
 	@Override
-	public Collection<Portfolio> findAllPortfolioForUser(User user) {
-		return repository.findAllByUser(user);
+	public List<Portfolio> findAllPortfoliosForUser(long userId) {
+		return repository.findAllByUser_Id(userId);
 	}
 
 	@Override

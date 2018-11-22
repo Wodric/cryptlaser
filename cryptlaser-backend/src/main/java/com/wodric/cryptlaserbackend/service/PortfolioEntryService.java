@@ -2,14 +2,13 @@ package com.wodric.cryptlaserbackend.service;
 
 import com.wodric.cryptlaserbackend.domain.Portfolio;
 import com.wodric.cryptlaserbackend.domain.PortfolioEntry;
-import com.wodric.cryptlaserbackend.domain.dto.PortfolioDto;
 import com.wodric.cryptlaserbackend.domain.dto.PortfolioEntryDto;
 
-import java.util.Collection;
+import java.util.List;
 
 public interface PortfolioEntryService {
 
-	Collection<PortfolioEntry> findEntryForPorfolio (Portfolio portfolio);
+	List<PortfolioEntry> findEntryForPortfolioId (Long portfolioId);
 
 	PortfolioEntry createPortfolioEntry (PortfolioEntryDto portfolioEntryDto);
 

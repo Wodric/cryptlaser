@@ -18,9 +18,6 @@ public class CurrencyController {
 	@Autowired
 	private CurrencyService currencyService;
 
-	@Autowired
-	private CurrencyApiService currencyApiService;
-
 
 	@GetMapping()
 	public Collection<Currency> getAllCurrencies(){

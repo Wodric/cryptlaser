@@ -1,12 +1,11 @@
 package com.wodric.cryptlaserbackend.repository;
 
-import com.wodric.cryptlaserbackend.domain.Portfolio;
 import com.wodric.cryptlaserbackend.domain.PortfolioEntry;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Collection;
+import java.util.List;
 
 public interface PortfolioEntryRepository extends JpaRepository<PortfolioEntry, Long> {
 
-	Collection<PortfolioEntry> findAllByPortfolio(Portfolio portfolio);
+	List<PortfolioEntry> findAllByPortfolio_Id(long portfolioId);
 }
