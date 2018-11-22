@@ -19,8 +19,9 @@ public class Portfolio {
 	private String name;
 
 	@ManyToOne
+	@JoinColumn(name = "userId")
 	private User user;
 
-	@OneToMany
+	@OneToMany(mappedBy = "Portfolios")
 	private List<PortfolioEntry> entryList;
 }

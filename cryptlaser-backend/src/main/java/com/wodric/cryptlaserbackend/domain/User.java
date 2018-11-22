@@ -7,11 +7,12 @@ import org.springframework.data.annotation.Id;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "Users")
+@Table(name = "AppUsers")
 public class User {
 
 	@Id
@@ -25,8 +26,8 @@ public class User {
 	@NotNull
 	private String password;
 
-	@OneToMany
-	private Portfolio portfolio;
+	@OneToMany(mappedBy = "AppUsers")
+	private List<Portfolio> portfolio;
 
 	@Version
 	private Long version;

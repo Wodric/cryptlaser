@@ -35,7 +35,7 @@ public class Currency {
 
     private String website;
 
-	@OneToMany
+	@OneToMany(mappedBy = "Currencies")
     private List<CurrencyValue> lastValueList;
 
     @Version

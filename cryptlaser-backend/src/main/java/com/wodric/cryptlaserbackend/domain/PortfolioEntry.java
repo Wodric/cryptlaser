@@ -24,7 +24,8 @@ public class PortfolioEntry {
 	private BigDecimal amount;
 
 	@NotNull
-	@OneToOne
+	@ManyToOne
+	@JoinColumn(name = "portfolioId")
 	private  Portfolio portfolio;
 
 	@Version

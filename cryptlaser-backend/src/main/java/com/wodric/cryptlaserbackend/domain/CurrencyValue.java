@@ -21,6 +21,7 @@ public class CurrencyValue {
 
     @NotNull
     @ManyToOne
+    @JoinColumn(name = "currencyId")
     private Currency referenceCurrency;
 
     @NotNull
