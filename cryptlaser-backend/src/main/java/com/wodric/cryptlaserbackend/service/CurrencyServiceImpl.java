@@ -2,7 +2,7 @@ package com.wodric.cryptlaserbackend.service;
 
 import com.wodric.cryptlaserbackend.domain.Currency;
 import com.wodric.cryptlaserbackend.domain.dto.CurrencyDto;
-import com.wodric.cryptlaserbackend.exception.CurrencyNotFoundException;
+import com.wodric.cryptlaserbackend.exception.EntityNotFoundException;
 import com.wodric.cryptlaserbackend.repository.CurrencyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,7 +37,7 @@ public class CurrencyServiceImpl implements CurrencyService {
 		Optional<Currency> currency = currencyRepository.findById(id);
 
 		if(!currency.isPresent()){
-			throw new CurrencyNotFoundException(id);
+			throw new EntityNotFoundException(id, Currency.class);
 		} else {
 			return currency.get();
 		}
@@ -48,7 +48,7 @@ public class CurrencyServiceImpl implements CurrencyService {
 		Optional<Currency> currency = currencyRepository.findById(id);
 
 		if(!currency.isPresent()){
-			throw new CurrencyNotFoundException(id);
+			throw new EntityNotFoundException(id, Currency.class);
 		} else {
 			currencyUpdated.setId(id);
 			return currencyRepository.save(currencyUpdated.toCurrency());

@@ -1,12 +1,12 @@
 package com.wodric.cryptlaserbackend.service;
 
-import com.wodric.cryptlaserbackend.domain.Currency;
 import com.wodric.cryptlaserbackend.domain.User;
-import com.wodric.cryptlaserbackend.domain.dto.CurrencyDto;
 import com.wodric.cryptlaserbackend.domain.dto.UserDto;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
+@Service
 public interface UserService {
 
 	Collection<User> findAllUsers();
