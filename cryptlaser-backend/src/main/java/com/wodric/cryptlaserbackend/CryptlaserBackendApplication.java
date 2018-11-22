@@ -3,7 +3,7 @@ package com.wodric.cryptlaserbackend;
 import com.wodric.cryptlaserbackend.domain.Currency;
 import com.wodric.cryptlaserbackend.domain.CurrencyValue;
 import com.wodric.cryptlaserbackend.domain.CurrencyType;
-import com.wodric.cryptlaserbackend.repository.CurrencyMarketPriceRepository;
+import com.wodric.cryptlaserbackend.repository.CurrencyValueRepository;
 import com.wodric.cryptlaserbackend.repository.CurrencyRepository;
 import com.wodric.cryptlaserbackend.service.CurrencyApiService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,7 @@ public class CryptlaserBackendApplication {
 	}
 
 	@Bean
-	ApplicationRunner init(CurrencyRepository repository, CurrencyMarketPriceRepository priceRepository) {
+	ApplicationRunner init(CurrencyRepository repository, CurrencyValueRepository priceRepository) {
 		return args -> {
 
 			List<Currency> currencies = currencyApiService.getCoinList();
