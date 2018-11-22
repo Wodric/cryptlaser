@@ -1,7 +1,7 @@
 package com.wodric.cryptlaserbackend.repository;
 
-import com.wodric.cryptlaserbackend.domain.CurrencyMarketPrice;
+import com.wodric.cryptlaserbackend.domain.CurrencyValue;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CurrencyMarketPriceRepository extends JpaRepository<CurrencyMarketPrice, Long> {
+public interface CurrencyMarketPriceRepository extends JpaRepository<CurrencyValue, Long> {
 }

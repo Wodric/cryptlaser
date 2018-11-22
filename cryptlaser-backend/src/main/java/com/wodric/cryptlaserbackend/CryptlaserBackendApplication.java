@@ -1,7 +1,7 @@
 package com.wodric.cryptlaserbackend;
 
 import com.wodric.cryptlaserbackend.domain.Currency;
-import com.wodric.cryptlaserbackend.domain.CurrencyMarketPrice;
+import com.wodric.cryptlaserbackend.domain.CurrencyValue;
 import com.wodric.cryptlaserbackend.domain.CurrencyType;
 import com.wodric.cryptlaserbackend.repository.CurrencyMarketPriceRepository;
 import com.wodric.cryptlaserbackend.repository.CurrencyRepository;
@@ -14,10 +14,8 @@ import org.springframework.context.annotation.Bean;
 
 import java.math.BigDecimal;
 import java.time.Instant;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Stream;
 
 @SpringBootApplication
 public class CryptlaserBackendApplication {
@@ -44,7 +42,7 @@ public class CryptlaserBackendApplication {
 
 			currencies.forEach(repository::save);
 
-			CurrencyMarketPrice bitcoinMarketPrice = new CurrencyMarketPrice();
+			CurrencyValue bitcoinMarketPrice = new CurrencyValue();
 			bitcoinMarketPrice.setReferenceCurrency(dollar);
 			bitcoinMarketPrice.setDate(Date.from(Instant.now()));
 			bitcoinMarketPrice.setId(1);

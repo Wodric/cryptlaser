@@ -12,6 +12,7 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
+@Table(name = "Currencies")
 public class Currency {
 
     @Id
@@ -35,5 +36,5 @@ public class Currency {
     private String website;
 
 	@OneToMany
-    private List<CurrencyMarketPrice> lastValueList;
+    private List<CurrencyValue> lastValueList;
 }

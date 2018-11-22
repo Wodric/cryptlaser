@@ -12,20 +12,21 @@ import java.util.Date;
 @Entity
 @Data
 @NoArgsConstructor
-public class CurrencyMarketPrice {
+@Table(name = "CurrencyValues")
+public class CurrencyValue {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    private int id;
 
     @NotNull
     @ManyToOne
-    Currency referenceCurrency;
+    private Currency referenceCurrency;
 
     @NotNull
     @Min(value = 0)
-    BigDecimal rate;
+    private BigDecimal rate;
 
     @NotNull
-    Date date;
+    private Date date;
 }

@@ -1,7 +1,7 @@
 package com.wodric.cryptlaserbackend.domain.dto;
 
 import com.wodric.cryptlaserbackend.domain.Currency;
-import com.wodric.cryptlaserbackend.domain.CurrencyMarketPrice;
+import com.wodric.cryptlaserbackend.domain.CurrencyValue;
 import com.wodric.cryptlaserbackend.domain.CurrencyType;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,7 +17,7 @@ public class CurrencyDto {
 	private long numberOnMarket;
 	private CurrencyType type;
 	private String webSite;
-	private List<CurrencyMarketPrice> lastValueList;
+	private List<CurrencyValue> lastValueList;
 
 	public Currency toCurrency(){
 		Currency currency = new Currency();
